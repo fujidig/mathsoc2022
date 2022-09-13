@@ -196,59 +196,56 @@
 	\maketitle
 	
 	\begin{frame}{測度$0$集合の和集合}
-		$(Y, \mu)$をポーランド確率空間とする。
-		測度の可算加法性より、測度$0$集合の可算個の和集合は再び測度$0$である。
+		$(Y, \mu)$をポーランド確率空間とする．
+		測度の可算加法性より，測度$0$集合の可算個の和集合は再び測度$0$である．
 		
 		\vspace{0.5cm}
-		Q. How about the union of continuum many measure $0$ sets?
+		Q. 連続体濃度個の測度$0$集合の和集合だとどうか？
 		
-		A. It is not necessary a measure $0$ set (e.g. singletons for all points).
+		A. 必ずしも測度$0$ではない (たとえば：一点集合たちの和集合).
 		
 		\vspace{0.5cm}
-		Q. What if we add assumptions to the given measure $0$ sets?
+		Q. 与えれた測度$0$集合たちに何か仮定を加えたらどうか？
 		
-		A. If we do it in a sense, then the union of continuum many measure $0$ sets is also a measure $0$ set!
+		A. それをすると，連続体濃度個の測度$0$集合の和集合も測度$0$となる！
 	\end{frame}
 		
 	\begin{frame}{Goldsternの定理}
 		\begin{block}{}
-			\textbf{(full domination order)} For $x, x' \in \omega^\omega$, define a relation $x \le x'$ by $(\forall n\in\omega)(x(n) \le x'(n))$.
+			\textbf{(full domination order)} $x, x' \in \omega^\omega$について関係$x \le x'$を$(\forall n\in\omega)(x(n) \le x'(n))$で定める．
 		\end{block}
 
-				In 1993,  Martin Goldstern proved the following theorem.
-				\begin{thmblock}{Goldstern's theorem ($\ZF+\DC$)}
-					Let $(Y, \mu)$ be a Polish probability space.
-					Let $A \subset \omega^\omega \times Y$ be a $\boldsig^1_1$ set.
-					Assume that for each $x \in \omega^\omega$,
+			1993年，Martin Goldsternは次の定理を証明した．
+				\begin{thmblock}{Goldsternの定理 ($\ZF+\DC$)}
+					$(Y, \mu)$をポーランド確率空間とする．
+					$A \subset \omega^\omega \times Y$を$\boldsig^1_1$集合とする．
+					各$x \in \omega^\omega$について
 					\[
 					A_x := \{ y \in Y : (x, y) \in A \}
 					\]
-					has measure $0$.
-					Also, assume $(\forall x, x' \in \omega^\omega)(x \le x' \Rightarrow A_{x} \subset A_{x'})$.
-					Then $\bigcup_{x \in \omega^\omega} A_x$ has also measure $0$.
+					が測度$0$だと仮定する．
+					また$(\forall x, x' \in \omega^\omega)(x \le x' \Rightarrow A_{x} \subset A_{x'})$を仮定する．
+					このとき$\bigcup_{x \in \omega^\omega} A_x$も測度$0$である．
 				\end{thmblock}
 	\end{frame}
 
 	\begin{frame}{原理$\GP(\Gamma)$}
 		\begin{defiblock}{定義}
-			Let $\Gamma$ be a pointclass.
-			Then \alert{$\GP(\Gamma)$} means the following statement:
-			Let $(Y, \mu)$ be a Polish probability space  and $A \subset \omega^\omega \times Y$ be in $\Gamma$.
-			Assume that for each $x \in \omega^\omega$, $A_x$ has $\mu$-measure $0$.
-			Also suppose that $(\forall x, x' \in \omega^\omega)(x \le x' \Rightarrow A_{x} \subset A_{x'})$.
-			Then $\bigcup_{x \in \omega^\omega} A_x$ has also $\mu$-measure $0$.
+			$\Gamma$をポイントクラスとする．
+			このとき\alert{$\GP(\Gamma)$}とは次の主張である:
+			$(Y, \mu)$をポーランド確率空間とし$A \subset \omega^\omega \times Y$は$\Gamma$に属するとする．
+			各$x \in \omega^\omega$について$A_x$は測度$0$だとする.
+			また$(\forall x, x' \in \omega^\omega)(x \le x' \Rightarrow A_{x} \subset A_{x'})$だとする．
+			すると$\bigcup_{x \in \omega^\omega} A_x$も測度$0$である．
 		\end{defiblock}
 	
-		Goldstern's theorem says that $\GP(\boldsig^1_1)$ holds.
-		
-		Note that if $\Gamma$ is a sufficiently high pointclass (that is if $\bolddelta^1_1 \subset \Gamma$), then we can assume that $(Y, \mu)$ is the Cantor space with the standard measure.
-		
-		%We consider $\GP(\all)$, that is Goldstern's principle for all subsets.
+		Goldsternの定理は$\GP(\boldsig^1_1)$が成り立つことを主張している．
 	\end{frame}
+
 	\begin{frame}{主結果}
-		The symbol ``$\all$" denotes the class of all subsets of Polish spaces.
+		記号``$\all$"はポーランド空間のすべての部分集合のなすクラスを表す．
 		\begin{thmblock}{定理}
-			$\GP(\all)$ is independent from $\ZFC$.
+			$\GP(\all)$は$\ZFC$から独立している．
 		\end{thmblock}
 		
 	\end{frame}
@@ -257,14 +254,14 @@
 		\begin{columns}
 			\begin{column}{0.58\textwidth}
 				\begin{thmblock}{定理}
-					Assume $\CH$. Then $\neg \GP(\all)$ holds.
+					$\CH$を仮定すると$\neg \GP(\all)$が導かれる．
 				\end{thmblock}
-				Proof. Let $\seq{x_\alpha : \alpha < \omega_1}$ be a cofinal increasing sequence in $(\omega^\omega, <^*)$. And let $\seq{y_\alpha : \alpha < \omega_1}$ be an enumeration of $2^\omega$.
-				Then the set $A$ defined by the following equation witnesses $\neg \GP(\all)$:
+				証明．$\seq{x_\alpha : \alpha < \omega_1}$を$(\omega^\omega, <^*)$の共終単調増加列とする．$\seq{y_\alpha : \alpha < \omega_1}$を$2^\omega$の元の枚挙とする．
+				すると次で定まる集合$A$は$\neg \GP(\all)$の証拠である:
 				\[
 				A_x = \{ y_\beta : \beta < \alpha_x  \},
 				\]
-				where $\alpha_x = \min \{\alpha : x <^* x_\alpha \}$. \qed
+				ここで$\alpha_x = \min \{\alpha : x <^* x_\alpha \}$. \qed
 			\end{column}
 			\begin{column}{0.48\textwidth}
 				\includegraphics[width=5.5cm]{IMG_0149.jpg}
@@ -273,13 +270,13 @@
 	\end{frame}
 
 	\begin{frame}{$\neg \GP(\all)$の無矛盾性}
-	Refining the last proof, we get the following theorem.
+		最後の証明を改良すると次の定理も得られる．
 	\begin{thmblock}{定理}
-		Assume that at least one of the following three conditions holds:
-		
+		次の3つの条件のうち少なくとも1つが成立すると仮定する．
+
 		\hspace{2em}$\add(\nul) = \frakb$, $\non(\nul) = \frakb$ or $\non(\nul) = \frakd$.
 		
-		Then $\neg \GP(\all)$ holds.
+		すると$\neg \GP(\all)$が成り立つ．
 	\end{thmblock}
 	\begin{block}{}
 	{\scriptsize
@@ -293,9 +290,9 @@
 
 	\begin{frame}{$\neg \GP(\all)$の無矛盾性}
 	\begin{thmblock}{}
-		Assume that at least one of the following three conditions holds:
+		次の3つの条件のうち少なくとも1つが成立すると仮定する:
 		$\add(\nul) = \frakb$, $\non(\nul) = \frakb$ or $\non(\nul) = \frakd$.
-		Then $\neg \GP(\all)$ holds.
+		すると$\neg \GP(\all)$が成り立つ．
 	\end{thmblock}
 	\begin{block}{}
 		{\scriptsize
@@ -355,17 +352,17 @@
 	\end{frame}
 
 	\begin{frame}{$V=L$は$\neg \GP(\Delta^1_2)$を含意する}
-			Refining the last proof  in another way again, we get the following theorem.
+		最後の定理の証明を別の方法で改良すると，次の定理も得られる．
 		\begin{thmblock}{定理}
-			$V=L$ implies $\neg \GP(\Delta^1_2)$.
+			$V=L$は$\neg \GP(\Delta^1_2)$を導く．
 		\end{thmblock}
 	\end{frame}
 
 	\begin{frame}{$\GP(\all)$の無矛盾性}
 	\begin{thmblock}{定理}
-		If $\ZFC$ is consistent then so is $\ZFC + \GP(\all)$.
+		$\ZFC$が無矛盾ならば$\ZFC + \GP(\all)$も無矛盾である．
 	\end{thmblock}
-	In fact, ``The Laver model" satisfies $ \GP(\all)$.
+	実際，``Laverモデル"が$\GP(\all)$のモデルである．
 	
 	
 	\[
@@ -421,9 +418,31 @@
 	\]
 	\end{frame}
 
+	\begin{frame}{$\boldsig^1_2$正則性との関係}
+		\begin{thmblock}{定理}
+			$\boldsig^1_2$ Lebesuge可測性は$\GP(\boldsig^1_2)$を導く．
+			さらに$\GP(\bolddelta^1_2)$は任意の実数$a$に対して$L[a]$上のdominating実数があることを導く．
+		\end{thmblock}
+		\[
+	\begin{tikzpicture}[scale=0.7]
+	\node (sigma12lm) at (0, 0) {$\boldsig^1_2$-LM};
+	\node (sigma12bp) at (3, 0) {$\boldsig^1_2$-BP};
+	\node[align=left] (dominating) at (10, 0) {$(\forall a \in \R)(\exists z \in \omega^\omega)$ \\ \hspace{0.5cm}$(\text{$z$ is a dominating real over $L[a]$})$};
+	\node (gpsigma12) at (1.5, -2) {$\GP(\boldsig^1_2)$};
+	\node (gpdelta12) at (4.5, -2) {$\GP(\bolddelta^1_2)$};
+	
+	\draw[->] (sigma12lm) -> (sigma12bp);
+	\draw[->] (sigma12bp) -> (dominating);
+	\draw[->] (sigma12lm) -> (gpsigma12);
+	\draw[->] (gpsigma12) -> (gpdelta12);
+	\draw[->] (gpdelta12) -> (dominating);
+\end{tikzpicture}
+\]
+	\end{frame}
+
 	\begin{frame}{決定性とSolovayモデル}
 		\begin{thmblock}{定理}
-			Assume $\ZF + \AD$. Then $\GP(\all)$ holds.
+			$\ZF + \AD$を仮定すると$\GP(\all)$が成り立つ．
 		\end{thmblock}
 		\begin{thmblock}{定理}
 			Solovayモデルにおいて$\GP(\all)$が成り立つ.
@@ -432,12 +451,13 @@
 
 	\begin{frame}{まとめ}
 		\begin{itemize}
-			\item Goldstern showed $\GP(\boldsig^1_1)$.
-			\item We proved the following 3 theorems:
+			\item Goldsternは$\GP(\boldsig^1_1)$を証明した．
+			\item 我々は次を証明した:
 			\begin{enumerate}
-				\item $\GP(\all)$ is independent from $\ZFC$.
-				\item $V=L$ implies $\neg \GP(\Delta^1_2)$.
-				\item Under $\ZF+\AD$, $\GP(\all)$ holds.
+				\item $\GP(\all)$が$\ZFC$から独立している．
+				\item $V=L$が$\neg \GP(\Delta^1_2)$を導く．
+				\item $\ZF+\AD$が$\GP(\all)$を導く．
+				\item Solovayモデルで$\GP(\all)$が成り立つ．
 			\end{enumerate}
 		\end{itemize}
 	\end{frame}
@@ -446,8 +466,8 @@
 	\begin{enumerate}
 		\item $V=L$は$\neg \GP(\Pi^1_1)$を導くか？	
 		\item $\ZFC+(\frakc>\aleph_2)+\GP(\all)$は無矛盾か？
-		\item (到達不能基数を仮定して)$\ZF$のモデルで実数の任意の集合がLebesgue可測だが、$\GP(\all)$を満たさないものはあるか？
-		\item ある$n \ge 2$	(または全ての$n \ge 2$)について、$\GP(\Sigma^1_{n+1})$と$\GP(\Sigma^1_n)$を分離することは、巨大基数を使わずにできるか？
+		\item (到達不能基数を仮定して)$\ZF$のモデルで実数の任意の集合がLebesgue可測だが，$\GP(\all)$を満たさないものはあるか？
+		\item ある$n \ge 2$	(または全ての$n \ge 2$)について，$\GP(\Sigma^1_{n+1})$と$\GP(\Sigma^1_n)$を分離することは，巨大基数を使わずにできるか？
 	\end{enumerate}
 	\end{frame}
 
@@ -460,6 +480,9 @@
 
 		\vspace{0.5cm}
 
-		この研究において吉信康夫氏、木原貴行氏、Jörg Brendle氏、池上大祐氏、Martin Goldstern氏に助言を頂いた。
+		この研究において吉信康夫氏，木原貴行氏，Jörg Brendle氏，池上大祐氏，Martin Goldstern氏に助言を頂いた．
+
+		\vspace{0.5cm}
+		本研究はJSPS科研費 JP22J20021の助成を受けたものである．
 	\end{frame}	
 \end{document}
